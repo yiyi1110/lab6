@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab6</title>
+    <style>
+        /* CSS cho tabs */
+        
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab button.active {
+            background-color: #ccc;
+        }
+        
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        
+        .tabcontent.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Labs Menu</h2>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'ex1')">Ex1</button>
+        <button class="tablinks" onclick="openTab(event, 'ex2')">Ex2</button>
+    </div>
+
+    <div id="ex1" class="tabcontent">
+        <h3>Ex1</h3>
+        <button><a href="f-pattern.jpg" download>Download Design</a></button>
+        <div class="tab">
+            <button class="subtablinks" onclick="openSubTab(event, 'design1')">Design</button>
+            <button class="subtablinks" onclick="openSubTab(event, 'implementation1')">Implementation</button>
+        </div>
+        <div id="design1" class="tabcontent">
+            <!-- Chèn hình ảnh design -->
+            <img src="f-pattern.jpg" alt="Design Image">
+        </div>
+        <div id="implementation1" class="tabcontent">
+            <!-- Nội dung Implementation -->
+            <p>Trong menu Labs, tạo 1 menu Lab6 (file lab6.html) sau đó tạo 2 tab Ex1, Ex2 Ex1: Thiết kế một trang Web đơn giản sử dụng mẫu F-pattern ==> chuyển sang html (ex1.html) Ex2: Thiết kế một trang Web sử dụng mẫu Z-pattern ==> chuyển sang html (ex2.html)
+                Với cả Ex1, Ex2: Tạo 2 tab Design và Implementation: + Design: chụp lại hình ảnh để có cái nhìn tổng quan về file thiết kế (thiết kế trên giấy và Figma), có nút Download để download file thiết kế về nếu muốn + Implementation: nội dung
+                phần hiện thực trên html</p>
+        </div>
+    </div>
+
+    <div id="ex2" class="tabcontent">
+        <h3>Ex2</h3>
+        <button><a href="z-pattern.jpg" download>Download Design</a></button>
+        <div class="tab">
+            <button class="subtablinks" onclick="openSubTab(event, 'design2')">Design</button>
+            <button class="subtablinks" onclick="openSubTab(event, 'implementation2')">Implementation</button>
+        </div>
+        <div id="design2" class="tabcontent">
+            <!-- Chèn hình ảnh design -->
+            <img src="z-pattern.jpg" alt="Design Image">
+        </div>
+        <div id="implementation2" class="tabcontent">
+            <!-- Nội dung Implementation -->
+            <p>Trong menu Labs, tạo 1 menu Lab6 (file lab6.html) sau đó tạo 2 tab Ex1, Ex2 Ex1: Thiết kế một trang Web đơn giản sử dụng mẫu F-pattern ==> chuyển sang html (ex1.html) Ex2: Thiết kế một trang Web sử dụng mẫu Z-pattern ==> chuyển sang html (ex2.html)
+                Với cả Ex1, Ex2: Tạo 2 tab Design và Implementation: + Design: chụp lại hình ảnh để có cái nhìn tổng quan về file thiết kế (thiết kế trên giấy và Figma), có nút Download để download file thiết kế về nếu muốn + Implementation: nội dung
+                phần hiện thực trên html</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function openSubTab(evt, subTabName) {
+            var i, subtabcontent, subtablinks;
+            subtabcontent = document.getElementsByClassName("subtabcontent");
+            for (i = 0; i < subtabcontent.length; i++) {
+                subtabcontent[i].style.display = "none";
+            }
+            subtablinks = document.getElementsByClassName("subtablinks");
+            for (i = 0; i < subtablinks.length; i++) {
+                subtablinks[i].className = subtablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(subTabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>
